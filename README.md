@@ -1,0 +1,1 @@
+# strata-airdrop-calculator
