@@ -1,0 +1,83 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* VARIÁVEIS STRATA */
+:root {
+  --bg-main: #0F1217;       /* rgb(15,18,23) */
+  --bg-card: #0B0E14;
+  --border-subtle: #161a20;
+  --text-main: #ffffff;
+  --text-muted: #9aa0a6;
+}
+
+/* BODY */
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* HEADER */
+.header {
+  background: var(--bg-main);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* TOOLBAR (equivale ao MuiToolbar) */
+.toolbar {
+  height: 64px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.logo img {
+  height: 26px;
+  width: auto;
+  display: block;
+}
+
+/* CTA */
+.cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.cta a {
+  background: #ffffff;
+  color: #000000;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.cta a:hover {
+  opacity: 0.9;
+}
+
+/* CONTENT PLACEHOLDER */
+.content {
+  padding: 32px;
+}
