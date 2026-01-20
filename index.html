@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Strata Airdrop Calculator</title>
+  <style>
+    body {
+      background: #0b0e14;
+      color: #e6e6e6;
+      font-family: Inter, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      background: #121826;
+      padding: 30px;
+      border-radius: 14px;
+      width: 360px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      font-size: 13px;
+      opacity: 0.8;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0 14px;
+      background: #0b0e14;
+      border: 1px solid #222;
+      color: #fff;
+      border-radius: 8px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #4f46e5;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #6366f1;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: center;
+    }
+    .hint {
+      font-size: 11px;
+      opacity: 0.6;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Strata Airdrop Calculator</h2>
+
+    <label>Total Points</label>
+    <input id="total" placeholder="Ex: 1,200,000,000,000">
+
+    <label>Your Points</label>
+    <input id="mine" placeholder="Ex: 110,000,000">
+
+    <label>Token Allocation (%)</label>
+    <input id="alloc" placeholder="Ex: 7.5">
+
+    <label>Estimated FDV ($)</label>
+    <input id="fdv" placeholder="Ex: 500000000">
+
+    <button onclick="calc()">Calculate</button>
+
+    <div class="result" id="result"></div>
+    <div class="hint">Estimate only. Final allocation may vary.</div>
+  </div>
+
+  <script>
+    function calc() {
+      let total = Number(total.value.replace(/,/g, ""));
+      let mine = Number(mine.value.replace(/,/g, ""));
+      let alloc = Number(alloc.value) / 100;
+      let fdv = Number(fdv.value.replace(/,/g, ""));
+
+      if (!total || !mine || !alloc || !fdv) {
+        result.innerText = "Fill all fields.";
+        return;
+      }
+
+      let value = fdv * alloc * (mine / total);
+      result.innerText = "Estimated Airdrop: $" + value.toFixed(2);
+    }
+  </script>
+</body>
+</html>
