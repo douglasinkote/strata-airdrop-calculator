@@ -2,195 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Strata Points Calculator</title>
-
-  <style>
-    body {
-      margin: 0;
-      background: #000000;
-      color: #ffffff;
-      font-family: Inter, Arial, sans-serif;
-    }
-
-    /* ===== HEADER ===== */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 32px;
-      border-bottom: 1px solid #111;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    .logo img {
-      height: 28px;
-    }
-
-    .cta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-      color: #b5b5b5;
-    }
-
-    .cta a {
-      background: #ffffff;
-      color: #000000;
-      padding: 8px 14px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 13px;
-    }
-
-    .cta a:hover {
-      opacity: 0.85;
-    }
-
-    /* ===== MAIN ===== */
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: calc(100vh - 80px);
-    }
-
-    .card {
-      background: #050505;
-      padding: 32px;
-      width: 380px;
-      border-radius: 16px;
-      border: 1px solid #111;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 24px;
-      font-size: 20px;
-    }
-
-    label {
-      font-size: 12px;
-      color: #aaaaaa;
-    }
-
-    input {
-      width: 100%;
-      margin-top: 6px;
-      margin-bottom: 16px;
-      padding: 11px;
-      background: #000;
-      border: 1px solid #1a1a1a;
-      border-radius: 10px;
-      color: #fff;
-      font-size: 14px;
-    }
-
-    input:focus {
-      outline: none;
-      border-color: #333;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      border-radius: 12px;
-      background: #ffffff;
-      color: #000000;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
-
-    .result {
-      margin-top: 22px;
-      text-align: center;
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    .disclaimer {
-      margin-top: 10px;
-      font-size: 11px;
-      color: #666;
-      text-align: center;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strata Clone</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="logo">
-      <!-- Substitua o src pela logo hospedada no seu repo -->
-      <img src="logo.png" alt="Strata">
-      Strata
-    </div>
+  <header class="header">
+    <div class="toolbar">
 
-    <div class="cta">
-      <span>New in Strata?</span>
-      <a href="https://app.strata.money/?ref=MIZCQusi" target="_blank">
-        Create Account
-      </a>
-    </div>
-  </div>
-
-  <!-- MAIN -->
-  <div class="container">
-    <div class="card">
-      <h2>Points Calculator</h2>
-
-      <label>Total Points</label>
-      <input id="total" placeholder="Ex: 1,200,000,000,000">
-
-      <label>Your Points</label>
-      <input id="mine" placeholder="Ex: 110,000,000">
-
-      <label>Token Allocation (%)</label>
-      <input id="alloc" placeholder="Ex: 7.5">
-
-      <label>Estimated FDV ($)</label>
-      <input id="fdv" placeholder="Ex: 500,000,000">
-
-      <button onclick="calc()">Calculate</button>
-
-      <div class="result" id="result"></div>
-      <div class="disclaimer">
-        This is an estimate. Final airdrop may vary.
+      <div class="logo">
+        <img src="logo.png" alt="Strata Logo">
+        <span>Strata</span>
       </div>
+
+      <div class="cta">
+        <span>New in Strata?</span>
+        <a href="https://app.strata.money/?ref=MIZCQusi" target="_blank">
+          Create Account
+        </a>
+      </div>
+
     </div>
-  </div>
+  </header>
 
-  <script>
-    function calc() {
-      let total = Number(total.value.replace(/,/g, ""));
-      let mine = Number(mine.value.replace(/,/g, ""));
-      let alloc = Number(alloc.value) / 100;
-      let fdv = Number(fdv.value.replace(/,/g, ""));
-
-      if (!total || !mine || !alloc || !fdv) {
-        result.innerText = "Fill all fields.";
-        return;
-      }
-
-      let value = fdv * alloc * (mine / total);
-      result.innerText = "Estimated Airdrop: $" + value.toFixed(2);
-    }
-  </script>
+  <main class="content">
+    <!-- Conteúdo futuro -->
+  </main>
 
 </body>
 </html>
